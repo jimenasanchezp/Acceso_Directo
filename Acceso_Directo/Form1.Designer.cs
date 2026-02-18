@@ -22,11 +22,12 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblId = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.grpControles = new System.Windows.Forms.GroupBox();
-            this.btnCargarCSV = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.grpControles = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.grpControles.SuspendLayout();
             this.SuspendLayout();
@@ -34,11 +35,11 @@
             // dgvDatos
             // 
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(12, 160);
+            this.dgvDatos.Location = new System.Drawing.Point(12, 170);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(619, 350);
+            this.dgvDatos.Size = new System.Drawing.Size(619, 340);
             this.dgvDatos.TabIndex = 0;
             // 
             // txtId
@@ -52,7 +53,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(80, 75);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(250, 22);
+            this.txtNombre.Size = new System.Drawing.Size(230, 22);
             this.txtNombre.TabIndex = 2;
             // 
             // lblId
@@ -73,62 +74,75 @@
             this.lblNombre.TabIndex = 2;
             this.lblNombre.Text = "Nombre:";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAgregar.Location = new System.Drawing.Point(330, 25);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(90, 30);
+            this.btnAgregar.TabIndex = 3;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.LightBlue;
-            this.btnGuardar.Location = new System.Drawing.Point(360, 19);
+            this.btnGuardar.Location = new System.Drawing.Point(425, 25);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(120, 35);
-            this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar (Hash)";
+            this.btnGuardar.Size = new System.Drawing.Size(90, 30);
+            this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.LightCoral;
+            this.btnEliminar.Location = new System.Drawing.Point(520, 25);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar.TabIndex = 5;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(360, 70);
+            this.btnBuscar.Location = new System.Drawing.Point(330, 65);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(120, 35);
-            this.btnBuscar.TabIndex = 4;
+            this.btnBuscar.Size = new System.Drawing.Size(185, 30);
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar Directo";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(520, 65);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(90, 30);
+            this.btnLimpiar.TabIndex = 7;
+            this.btnLimpiar.Text = "Limpiar Todo";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // grpControles
             // 
             this.grpControles.Controls.Add(this.btnLimpiar);
-            this.grpControles.Controls.Add(this.btnCargarCSV);
+            this.grpControles.Controls.Add(this.btnBuscar);
+            this.grpControles.Controls.Add(this.btnEliminar);
+            this.grpControles.Controls.Add(this.btnGuardar);
+            this.grpControles.Controls.Add(this.btnAgregar);
             this.grpControles.Controls.Add(this.lblId);
             this.grpControles.Controls.Add(this.txtId);
             this.grpControles.Controls.Add(this.lblNombre);
             this.grpControles.Controls.Add(this.txtNombre);
-            this.grpControles.Controls.Add(this.btnGuardar);
-            this.grpControles.Controls.Add(this.btnBuscar);
             this.grpControles.Location = new System.Drawing.Point(12, 12);
             this.grpControles.Name = "grpControles";
-            this.grpControles.Size = new System.Drawing.Size(619, 130);
+            this.grpControles.Size = new System.Drawing.Size(619, 140);
             this.grpControles.TabIndex = 1;
             this.grpControles.TabStop = false;
             this.grpControles.Text = "Gestión de Registros";
-            // 
-            // btnCargarCSV
-            // 
-            this.btnCargarCSV.Location = new System.Drawing.Point(493, 21);
-            this.btnCargarCSV.Name = "btnCargarCSV";
-            this.btnCargarCSV.Size = new System.Drawing.Size(120, 23);
-            this.btnCargarCSV.TabIndex = 5;
-            this.btnCargarCSV.Text = "Cargar CSV";
-            this.btnCargarCSV.UseVisualStyleBackColor = true;
-            this.btnCargarCSV.Click += new System.EventHandler(this.btnCargarCSV_Click_1);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(493, 82);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(120, 23);
-            this.btnLimpiar.TabIndex = 6;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // Form1
             // 
@@ -153,10 +167,11 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.GroupBox grpControles;
-        private System.Windows.Forms.Button btnCargarCSV;
         private System.Windows.Forms.Button btnLimpiar;
     }
 }
